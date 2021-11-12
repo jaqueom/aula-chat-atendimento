@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${titulo}"></title>
+</head>
+<body>
+    <h1 th:text="${titulo}"></h1>
+
+    <form th:action="@{adicionarMensagem}">
+        <label>Informe sua mensagem:</label><br>
+        <input name="mensagem"> <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <ul th:each="msg : ${mensagens}">
+        <li th:text="${msg.getDescricao()}"></li>
+    </ul>
+</body>
+</html>
